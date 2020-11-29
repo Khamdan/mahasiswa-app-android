@@ -3,7 +3,7 @@ package com.meridianid.farizdotid.mahasiswaapp.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -91,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         Log.e("debug", "onFailure: ERROR > " + t.getMessage());
                         Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
+                        loading.dismiss();
                     }
                 });
     }
